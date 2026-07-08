@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #fcf8f7;
+  --surface: #ffffff;
+  --rose: #f7e8eb;
+  --gold: #c8a96b;
+  --ink: #2f2a2a;
+  --muted: #6f6767;
+}
+
+body {
+  @apply antialiased;
+  background: linear-gradient(180deg, var(--bg) 0%, #fdfaf8 100%);
+  color: var(--ink);
+}
+
+* {
+  @apply box-border;
+}
+
+::selection {
+  background: var(--rose);
+  color: var(--ink);
+}
