@@ -33,7 +33,7 @@ export default function CatalogClient({ initialProducts, initialCategories }) {
   return (
     <main className="min-h-screen bg-transparent px-4 py-12 lg:px-8">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-8 rounded-[32px] border border-[#f0e4e5] bg-white/80 p-8 shadow-[0_15px_40px_rgba(47,42,42,0.05)]">
+        <div className="mb-6 rounded-[24px] border border-[#f0e4e5] bg-white/80 p-4 shadow-[0_15px_40px_rgba(47,42,42,0.05)] sm:mb-8 sm:rounded-[32px] sm:p-8">
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#b48a45]">Katalog</p>
           <h1 className="mt-3 text-3xl font-semibold text-[#2f2a2a]">Produktkatalog</h1>
           <p className="mt-3 max-w-2xl text-slate-600">
@@ -70,10 +70,10 @@ export default function CatalogClient({ initialProducts, initialCategories }) {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {filteredProducts.map((product) => (
             <article key={product.id} className="overflow-hidden rounded-[28px] border border-[#f0e4e5] bg-white shadow-[0_15px_45px_rgba(47,42,42,0.06)] transition hover:-translate-y-1">
-              <img src={product.featured_image_url || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80'} alt={product.name} className="h-60 w-full object-cover" />
-              <div className="p-6">
+              <img src={product.featured_image_url || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=80'} alt={product.name} className="h-52 w-full object-cover sm:h-60" />
+              <div className="p-4 sm:p-6">
                 <div className="flex items-center justify-between gap-3">
-                  <p className="text-sm font-medium uppercase tracking-[0.25em] text-[#b48a45]">{product.categories?.name || 'Kategorie'}</p>
+                  <p className="text-xs font-medium uppercase tracking-[0.25em] text-[#b48a45] sm:text-sm">{product.categories?.name || 'Kategorie'}</p>
                   <button
                     onClick={() => toggleFavorite(product)}
                     className={`rounded-full px-3 py-1 text-sm ${isFavorite(product.id) ? 'bg-[#f7e8eb] text-[#b48a45]' : 'bg-[#fcf8f7] text-[#6f6767]'}`}
@@ -82,21 +82,22 @@ export default function CatalogClient({ initialProducts, initialCategories }) {
                   </button>
                 </div>
 
-                <h2 className="mt-3 text-xl font-semibold text-[#2f2a2a]">{product.name}</h2>
-                <p className="mt-3 text-sm leading-7 text-[#6f6767]">{product.short_description || 'Hochwertiges Papier zur Dekoration von Kuchen und Desserts.'}</p>
-                <div className="mt-6 flex items-center justify-between">
-                  <span className="text-2xl font-semibold text-[#2f2a2a]">{Number(product.price).toFixed(2)} €</span>
-                  <div className="flex gap-2">
-                    <button
-                      onClick={() => addToCart(product)}
-                      className="rounded-full bg-[#2f2a2a] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#1f1b1b]"
-                    >
-                      In den Warenkorb
-                    </button>
-                    <Link href={`/product/${product.slug}`} className="rounded-full border border-[#e7d6d7] bg-white px-4 py-2 text-sm font-semibold text-[#2f2a2a] transition hover:border-[#c8a96b] hover:text-[#b48a45]">
-                      Details
-                    </Link>
-                  </div>
+                <h2 className="mt-2 text-lg font-semibold text-[#2f2a2a] sm:mt-3 sm:text-xl">{product.name}</h2>
+                <p className="mt-2 text-sm leading-6 text-[#6f6767] sm:mt-3 sm:leading-7">{product.short_description || 'Hochwertiges Papier zur Dekoration von Kuchen und Desserts.'}</p>
+
+                <div className="mt-4 flex items-center justify-between sm:mt-6">
+                  <span className="text-xl font-semibold text-[#2f2a2a] sm:text-2xl">{Number(product.price).toFixed(2)} €</span>
+                </div>
+                <div className="mt-3 grid grid-cols-2 gap-2">
+                  <button
+                    onClick={() => addToCart(product)}
+                    className="rounded-full bg-[#2f2a2a] px-3 py-2.5 text-xs font-semibold text-white transition hover:bg-[#1f1b1b] sm:px-4 sm:text-sm"
+                  >
+                    In den Warenkorb
+                  </button>
+                  <Link href={`/product/${product.slug}`} className="rounded-full border border-[#e7d6d7] bg-white px-3 py-2.5 text-center text-xs font-semibold text-[#2f2a2a] transition hover:border-[#c8a96b] hover:text-[#b48a45] sm:px-4 sm:text-sm">
+                    Details
+                  </Link>
                 </div>
               </div>
             </article>

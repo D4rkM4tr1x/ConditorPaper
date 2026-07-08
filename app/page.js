@@ -8,30 +8,30 @@ export default async function HomePage() {
   const products = await getFeaturedProducts();
   return (
     <main className="min-h-screen bg-transparent">
-      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-12 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-16">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-10 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:py-16">
         <div className="flex flex-col justify-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#b48a45]">Essbares Zuckerpapier</p>
-          <h1 className="max-w-2xl text-4xl font-semibold leading-tight text-[#2f2a2a] sm:text-5xl">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.35em] text-[#b48a45] sm:mb-4 sm:text-sm">Essbares Zuckerpapier</p>
+          <h1 className="max-w-2xl text-3xl font-semibold leading-tight text-[#2f2a2a] sm:text-4xl lg:text-5xl">
             Elegante Designs für besondere Kuchen
           </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#6f6767]">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-[#6f6767] sm:mt-6 sm:text-lg sm:leading-8">
             Minimalistisch, hochwertig und besonders schön — unsere Papierdekorationen machen jeden Kuchen zu einem echten Highlight.
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link href="/catalog" className="rounded-full bg-[#2f2a2a] px-6 py-3 font-semibold text-white transition hover:bg-[#1f1b1b]">
+          <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 sm:gap-4">
+            <Link href="/catalog" className="rounded-full bg-[#2f2a2a] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#1f1b1b] sm:px-6 sm:py-3">
               Zum Sortiment
             </Link>
-            <Link href="/catalog" className="rounded-full border border-[#e7d6d7] bg-white px-6 py-3 font-semibold text-[#2f2a2a] transition hover:border-[#c8a96b] hover:text-[#b48a45]">
+            <Link href="/catalog" className="rounded-full border border-[#e7d6d7] bg-white px-5 py-2.5 text-sm font-semibold text-[#2f2a2a] transition hover:border-[#c8a96b] hover:text-[#b48a45] sm:px-6 sm:py-3">
               Neue Kollektionen
             </Link>
           </div>
         </div>
 
-        <div className="overflow-hidden rounded-[32px] border border-[#f0e4e5] bg-white p-3 shadow-[0_20px_60px_rgba(47,42,42,0.08)]">
+        <div className="overflow-hidden rounded-[24px] border border-[#f0e4e5] bg-white p-2 shadow-[0_20px_60px_rgba(47,42,42,0.08)] sm:rounded-[32px] sm:p-3">
           <img
             src="https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1200&q=80"
             alt="Kuchen mit Dekoration"
-            className="h-[430px] w-full rounded-[24px] object-cover"
+            className="h-56 w-full rounded-[18px] object-cover sm:h-72 sm:rounded-[24px] lg:h-[430px]"
           />
         </div>
       </section>
